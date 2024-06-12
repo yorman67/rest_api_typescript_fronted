@@ -1,7 +1,7 @@
 
 import axios from "axios"
 import { DraftProductSchema, Product, productsSchema, ProductSchema } from "../types"
-import { number, safeParse } from "valibot"
+import { safeParse } from "valibot"
 import { toBoolean } from "../helpers"
 type ProductData = {
     [k: string]: FormDataEntryValue
@@ -97,7 +97,7 @@ export async function updateAvalibility( id: Product['id']) {
 
     const url = `${import.meta.env.VITE_API_URL}/api/products/${id}`
     await axios.patch(url)
-    
+
     } catch (error) {
         console.log(error)
     }
